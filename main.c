@@ -19,6 +19,7 @@ static void activate (GtkApplication *app, gpointer user_data) {
   GtkWidget *button;
   GtkWidget *button_box;
   GtkWidget *label;
+  GtkWidget *txtField;
 
   // Create container fixed
   fixed = gtk_fixed_new();
@@ -45,6 +46,11 @@ static void activate (GtkApplication *app, gpointer user_data) {
   label = gtk_label_new("soy un label");
   gtk_fixed_put(GTK_FIXED(fixed), label, 170, 20);
   gtk_container_add(GTK_CONTAINER(window), fixed);
+
+  txtField = gtk_entry_new();
+  gtk_fixed_put(GTK_FIXED(fixed), txtField, 100, 200);
+
+  // Show all elements container in arg(window)
   gtk_widget_show_all (window);
 }
 
