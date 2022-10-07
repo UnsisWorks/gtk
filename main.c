@@ -2,10 +2,17 @@
 
 // change scope to global for fixed
 GtkWidget *fixed;
+GtkWidget *label;
+  GtkWidget *window;
+  GtkWidget *button;
+  GtkWidget *button_box;
+  GtkWidget *txtField;
 // Funtion execute for signal the widgets generate. Arg need
 static void print_hello (GtkWidget *widget, gpointer   data){
   g_print ("Create new widget\n");
   GtkWidget *colorBtn;
+  const gchar *txt[] = gtk_entry_get_text(GTK_ENTRY(txtField));
+  gtk_label_set_text(GTK_LABEL(label), txt);
 
   // Create new widget in funtion
   colorBtn = gtk_color_button_new();
@@ -15,11 +22,7 @@ static void print_hello (GtkWidget *widget, gpointer   data){
 }
 
 static void activate (GtkApplication *app, gpointer user_data) {
-  GtkWidget *window;
-  GtkWidget *button;
-  GtkWidget *button_box;
-  GtkWidget *label;
-  GtkWidget *txtField;
+
 
   // Create container fixed
   fixed = gtk_fixed_new();
