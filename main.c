@@ -11,13 +11,14 @@ GtkWidget *label;
 static void print_hello (GtkWidget *widget, gpointer   data){
   g_print ("Create new widget\n");
   GtkWidget *colorBtn;
-  const gchar *txt[] = gtk_entry_get_text(GTK_ENTRY(txtField));
+  // Recuperar valor de text fiel
+  const gchar *txt = gtk_entry_get_text(GTK_ENTRY(txtField));
   gtk_label_set_text(GTK_LABEL(label), txt);
 
   // Create new widget in funtion
   colorBtn = gtk_color_button_new();
   gtk_color_button_set_title(GTK_COLOR_BUTTON(colorBtn), "Paleta de color... creo");
-  gtk_fixed_put(GTK_FIXED(fixed), colorBtn, 20, 170);
+  gtk_fixed_put(GTK_FIXED(fixed), colorBtn, 120, 170);
   gtk_widget_show_all(fixed);
 }
 
