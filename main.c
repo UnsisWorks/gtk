@@ -1,14 +1,20 @@
 #include <gtk/gtk.h>
 
+// change scope to global for fixed
+GtkWidget *fixed;
 // Funtion execute for signal the widgets generate. Arg need
 static void print_hello (GtkWidget *widget, gpointer   data){
-  int num = 10;
-  int num2 = 11;
-  g_print ("Hello World %d\n", num + num2);
+  g_print ("Create new widget\n");
+  GtkWidget *colorBtn;
+
+  // Create new widget in funtion
+  colorBtn = gtk_color_button_new();
+  gtk_color_button_set_title(GTK_COLOR_BUTTON(colorBtn), "Paleta de color... creo");
+  gtk_fixed_put(GTK_FIXED(fixed), colorBtn, 20, 170);
+  gtk_widget_show_all(fixed);
 }
 
 static void activate (GtkApplication *app, gpointer user_data) {
-  GtkWidget *fixed;
   GtkWidget *window;
   GtkWidget *button;
   GtkWidget *button_box;
